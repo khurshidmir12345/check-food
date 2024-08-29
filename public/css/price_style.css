@@ -1,0 +1,202 @@
+.plans-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.plans-container h1 {
+    font-size: 36px;
+    /*color: #333;*/
+    margin-bottom: 40px;
+    font-family: 'Pacifico', cursive;
+    color: #4b6584;
+    letter-spacing: 1.5px;
+}
+
+/* Grid Layout */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Plan Card Styles */
+.plan-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* Ensure plan-card stays below plan-note */
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.plan-card:hover .plan-note {
+    background-color: darkgreen;
+}
+
+.plan-header {
+    background: linear-gradient(to right, #2f477a, #ff6f61);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.plan-header h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.plan-header .plan-type {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Plan Price Styles */
+.plan-price {
+    font-size: 48px;
+    font-weight: 700;
+    color: darkgoldenrod;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.plan-price .currency {
+    font-size: 24px;
+    vertical-align: super;
+    margin-right: 3px;
+}
+
+/* Button Styles */
+.btn-price {
+    z-index: 2; /* Ensure the button is on top */
+    background: linear-gradient(to right, #1e7e34, #0e616e);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative; /* Position relative to ensure z-index works */
+}
+
+.btn-price:hover {
+    background-color: green;
+    color: goldenrod;
+    transform: scale(1.05);
+}
+
+/* Note / Ribbon Styles */
+/* Note / Ribbon Styles */
+/* Note / Ribbon Styles */
+.plan-note {
+    position: absolute;
+    top: 210px;
+    left: 1px;
+    background-color: darkgoldenrod;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.plan-note::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent darkgoldenrod;
+}
+
+/*.plan-note span {*/
+/*    display: inline-block;*/
+/*    !*transform: rotate(deg);*!*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+
+
+/* Hover Effects */
+.plan-card:hover .plan-header {
+    background: linear-gradient(to right, #2f477a, #ff6f61);
+}
+
+.plan-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.plan-card:hover:before {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .plans-container h1 {
+        font-size: 32px;
+    }
+
+    .plan-card {
+        padding: 20px 15px;
+    }
+
+    .plan-header h2 {
+        font-size: 24px;
+    }
+
+    .plan-price {
+        font-size: 30px;
+    }
+
+    .btn-price {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plans-container h1 {
+        font-size: 28px;
+    }
+
+    .plan-header h2 {
+        font-size: 20px;
+    }
+
+    .plan-price {
+        font-size: 24px;
+    }
+
+    .btn-price {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
