@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePlanRequest;
 use App\Http\Requests\UpdatePlanRequest;
+use App\Models\Order;
 use App\Models\Plan;
+use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
@@ -13,7 +15,8 @@ class PlanController extends Controller
      */
     public function index()
     {
-        //
+        $plans = Plan::all();
+        return view('admin.prices.index', compact('plans'));
     }
 
     /**
@@ -35,9 +38,16 @@ class PlanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Plan $plan)
+    public function show(int $id, Request $request)
     {
-        //
+        $plan = Plan::query()->find($id);
+        $paymentType = $request->query('payment_type');
+
+        $order = Order::query()->create([
+            'user_id' => auth()->id,
+            'plan_id'=> $plan->id,
+            'price' => $plan->price,
+        ]);
     }
 
     /**

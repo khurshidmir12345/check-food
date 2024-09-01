@@ -38,5 +38,10 @@
                 <span class="w-20 h-15 mr-2">{{ __('Log in') }}</span>
             </button>
         </div>
+        <div class="mt-4 text-center">
+            <a href="{{ route('register') }}" class="inline-block border-l-8 text-sm text-gray-600 hover:text-gray-900">
+                {{ __('Don’t have an account? Register') }}
+            </a>
+        </div>
     </form>
 </x-guest-layout>

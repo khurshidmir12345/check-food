@@ -6,8 +6,7 @@
 }
 
 .plans-container h1 {
-    font-size: 36px;
-    /*color: #333;*/
+    font-size: 2.25rem; /* Equivalent to 36px */
     margin-bottom: 40px;
     font-family: 'Pacifico', cursive;
     color: #4b6584;
@@ -25,12 +24,12 @@
 .plan-card {
     background-color: #fff;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 2rem 1.25rem; /* Equivalent to 30px 20px */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    z-index: 0; /* Ensure plan-card stays below plan-note */
+    z-index: 0;
 }
 
 .plan-card:hover {
@@ -43,7 +42,7 @@
 
 .plan-header {
     background: linear-gradient(to right, #2f477a, #ff6f61);
-    padding: 20px;
+    padding: 1.25rem; /* Equivalent to 20px */
     border-radius: 10px;
     color: #fff;
     margin-bottom: 25px;
@@ -51,18 +50,18 @@
 }
 
 .plan-header h2 {
-    font-size: 28px;
+    font-size: 1.75rem; /* Equivalent to 28px */
     margin-bottom: 5px;
 }
 
 .plan-header .plan-type {
-    font-size: 16px;
+    font-size: 1rem; /* Equivalent to 16px */
     opacity: 0.8;
 }
 
 /* Plan Price Styles */
 .plan-price {
-    font-size: 48px;
+    font-size: 3rem; /* Equivalent to 48px */
     font-weight: 700;
     color: darkgoldenrod;
     margin-bottom: 30px;
@@ -70,27 +69,27 @@
 }
 
 .plan-price .currency {
-    font-size: 24px;
+    font-size: 1.5rem; /* Equivalent to 24px */
     vertical-align: super;
     margin-right: 3px;
 }
 
 /* Button Styles */
 .btn-price {
-    z-index: 2; /* Ensure the button is on top */
+    z-index: 2;
     background: linear-gradient(to right, #1e7e34, #0e616e);
     color: #ffffff;
     border: none;
     border-radius: 25px;
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 0.75rem 1.5rem; /* Equivalent to 12px 24px */
+    font-size: 1.125rem; /* Equivalent to 18px */
     font-weight: 600;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
-    position: relative; /* Position relative to ensure z-index works */
+    position: relative;
 }
 
 .btn-price:hover {
@@ -98,43 +97,6 @@
     color: goldenrod;
     transform: scale(1.05);
 }
-
-/* Note / Ribbon Styles */
-/* Note / Ribbon Styles */
-/* Note / Ribbon Styles */
-.plan-note {
-    position: absolute;
-    top: 210px;
-    left: 1px;
-    background-color: darkgoldenrod;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 0 5px 5px 0;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    text-transform: uppercase;
-}
-
-.plan-note::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    transform: translateY(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent transparent darkgoldenrod;
-}
-
-/*.plan-note span {*/
-/*    display: inline-block;*/
-/*    !*transform: rotate(deg);*!*/
-/*    font-size: 14px;*/
-/*    font-weight: bold;*/
-/*}*/
-
 
 
 /* Hover Effects */
@@ -158,45 +120,181 @@
     opacity: 1;
 }
 
-/* Responsive Adjustments */
+/* Responsive Media Queries */
 @media (max-width: 768px) {
     .plans-container h1 {
-        font-size: 32px;
+        font-size: 2rem; /* Equivalent to 32px */
     }
 
     .plan-card {
-        padding: 20px 15px;
+        padding: 1.25rem 1rem; /* Equivalent to 20px 15px */
     }
 
     .plan-header h2 {
-        font-size: 24px;
+        font-size: 1.5rem; /* Equivalent to 24px */
     }
 
     .plan-price {
-        font-size: 30px;
+        font-size: 1.875rem; /* Equivalent to 30px */
+    }
+
+    .plan-note {
+        font-size: 0.625rem; /* Equivalent to 10px */
+        border-width: 6px;
+        top: 61%;
     }
 
     .btn-price {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 1rem; /* Equivalent to 16px */
+        padding: 0.625rem 1.25rem; /* Equivalent to 10px 20px */
     }
 }
 
 @media (max-width: 480px) {
     .plans-container h1 {
-        font-size: 28px;
+        font-size: 1.75rem; /* Equivalent to 28px */
+    }
+
+    .plan-card {
+        padding: 1rem 0.75rem; /* Equivalent to 16px 12px */
     }
 
     .plan-header h2 {
-        font-size: 20px;
+        font-size: 1.25rem; /* Equivalent to 20px */
     }
 
     .plan-price {
-        font-size: 24px;
+        font-size: 1.375rem; /* Equivalent to 22px */
+    }
+
+    .plan-note {
+        font-size: 0.5rem; /* Equivalent to 8px */
+        border-width: 5px;
+        top: 63%;
     }
 
     .btn-price {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 0.875rem; /* Equivalent to 14px */
+        padding: 0.5rem 1rem; /* Equivalent to 8px 16px */
     }
 }
+
+@media (max-width: 370px) {
+    .plans-container h1 {
+        font-size: 1.5rem; /* Equivalent to 24px */
+    }
+
+    .plan-card {
+        padding: 0.75rem 0.5rem; /* Equivalent to 12px 8px */
+    }
+
+    .plan-header h2 {
+        font-size: 1rem; /* Equivalent to 16px */
+    }
+
+    .plan-price {
+        font-size: 1.125rem; /* Equivalent to 18px */
+    }
+
+    .plan-note {
+        font-size: 0.375rem; /* Equivalent to 6px */
+        border-width: 4px;
+        top: 65%;
+    }
+
+    .btn-price {
+        font-size: 0.75rem; /* Equivalent to 12px */
+        padding: 0.5rem 0.75rem; /* Equivalent to 8px 12px */
+    }
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1e7e34;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: dimgray;
+    font-weight: bold;
+}
+
+.close {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+    /*margin: 22px;*/
+    padding: 20px;
+    gap: 80px;
+    width: 100%;
+}
+
+.payment-card {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.payment-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.payment-icon {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+
+

@@ -24,7 +24,9 @@
         <ul>
             <li><a href="/">Bosh Sahifa</a></li>
             <li><a href="{{route('admin.prices.index')}}">To'lovlar</a></li>
-            {{--                <li><a href="/contact">Contact</a></li>--}}
+            @if(in_array('1' , auth()->user()->roles->pluck('id')->toArray()))
+                <li ><a style="background-color: darkgoldenrod;color: white;padding: 8px;border-radius: 50%" href="{{route('admin.layaouts.header')}}">admin</a></li>
+            @endif
             {{--                <li><a href="/recipes">Recipes</a></li>--}}
         </ul>
         <form method="POST" action="{{ route('logout') }}" class="logout-form">
@@ -45,11 +47,11 @@
 @yield('scripts')
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
             } else {

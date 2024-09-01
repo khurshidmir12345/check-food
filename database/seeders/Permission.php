@@ -75,23 +75,23 @@ class Permission extends Seeder
             ],
             [
                 'id'=>16,
-                'name'=>'qr_access',
+                'name'=>'taom_access',
             ],
             [
                 'id'=>17,
-                'name'=>'qr_index',
+                'name'=>'taom_index',
             ],
             [
                 'id'=>18,
-                'name'=>'qr_create',
+                'name'=>'taom_create',
             ],
             [
                 'id'=>19,
-                'name'=>'qr_update',
+                'name'=>'taom_update',
             ],
             [
                 'id'=>20,
-                'name'=>'qr_delete',
+                'name'=>'taom_delete',
             ],
         ]);
     }

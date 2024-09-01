@@ -8,7 +8,7 @@
             <li class="sidebar-item {{ request()->is('/') ? 'active' : '' }}">
                 <a class="sidebar-link" href="/">
                     <i class="align-middle" data-feather="home"></i>
-                    <span class="align-middle">Dashboard</span>
+                    <span class="align-middle">Go To Site</span>
                 </a>
             </li>
 
@@ -39,12 +39,11 @@
             @endcan
 
             @endcan
-
-            @can('qr_access')
-            <li class="sidebar-item {{ request()->routeIs('admin.qrcodes.index') ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('admin.qrcodes.index') }}">
-                    <i class="align-middle" data-feather="square"></i>
-                    <span class="align-middle">Qr Codes</span>
+            @can('taom_access')
+            <li class="sidebar-item {{ request()->routeIs('admin.taomlar.index') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.taomlar.index') }}">
+                    <i class="align-middle" data-feather="coffee"></i>
+                    <span class="align-middle">Taomlar</span>
                 </a>
             </li>
             @endcan

@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
             Permission::class,
             RoleSeeder::class,
             UserSeeder::class,
+            SabzavotlarSeeder::class,
+            TaomlarSeeder::class,
+            ImageSeeder::class,
+            PlanSeeder::class
         ]);
 
 

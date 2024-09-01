@@ -3,9 +3,10 @@
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\QrCode\QrCodeController;
 use App\Http\Controllers\SocialAuthController;
+use App\Http\Controllers\TaomlarController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,13 +21,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('scan/{id}', [QrCodeController::class, 'scan'])->name('qrcodes.scan');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
+    Route::resource('prices', PlanController::class);
+    Route::get('/prices/show/{id}', [PlanController::class, 'show'])->name('admin.prices.show');
+
     Route::resource('permissions', PermissionController::class);
-    Route::resource('qrcodes', QrCodeController::class);
+    Route::resource('taomlar', TaomlarController::class);
+    Route::post('random-dish', [TaomlarController::class, 'getRandomDish'])->name('random-dish');
 
 });
 Route::group(['middleware' => ['web']], function () {
@@ -45,8 +49,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth','verified'])->name('dashboard');
 
 Route::get('/', function () {
-    return redirect()->route('admin.qrcodes.index');
+    return view('admin.meals.index');
 })->middleware('auth');
+
+Route::get('/home', function () {
+    return view('layouts.header');
+})->middleware('auth')->name('admin.layaouts.header');
 
 
 require __DIR__ . '/auth.php';

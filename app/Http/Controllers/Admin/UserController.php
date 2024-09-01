@@ -55,9 +55,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        $posts = $user->load('posts');
 
-        return view('admin.users.show', compact('user', 'posts'));
+
+        return view('admin.users.show', compact('user'));
     }
 
     /**
