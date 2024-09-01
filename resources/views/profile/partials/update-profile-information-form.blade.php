@@ -1,22 +1,22 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('Profile Information') }}
+            {{ __('Hisobingiz haqida malumot') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __("View your account's profile information and email address.") }}
+            {{ __("---------------------------------------------") }}
         </p>
     </header>
 
     <div class="mt-6 space-y-6">
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Ism')" />
             <p id="name" class="mt-1 block w-full">{{ $user->name }}</p>
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('Elektron pochta manzili')" />
             <p id="email" class="mt-1 block w-full">{{ $user->email }}</p>
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

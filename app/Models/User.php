@@ -57,11 +57,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class,'role_user');
     }
 
-    public function qr_codes(): HasMany
+    public function taomlar(): BelongsToMany
     {
-        return $this->hasMany(QrCode::class);
+        return $this->belongsToMany(Taomlar::class, 'taomlar_user');
     }
-
 
     public function permissions(): hasManyThrough
     {

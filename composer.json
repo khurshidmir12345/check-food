@@ -11,7 +11,6 @@
         "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.15",
         "laravel/tinker": "^2.8",
-        "moonshine/moonshine": "^2.6",
         "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {

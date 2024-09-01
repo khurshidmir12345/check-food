@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.taomlar.update',[$taomlar->id]) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.taomlar.update', $taomlar->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 

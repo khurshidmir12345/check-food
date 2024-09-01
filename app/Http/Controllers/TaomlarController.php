@@ -10,13 +10,14 @@ use App\Models\Taomlar;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
-class TaomlarController extends Controller
+class   TaomlarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function getRandomDish()
     {
+
 
         $user = User::with('taomlar')->where('id', auth()->id())->first();
 
@@ -61,8 +62,8 @@ class TaomlarController extends Controller
 
     public function index()
     {
-        $dish = Taomlar::query()->with('image')->get();
-        return view('admin.meals.indexed', compact('dish'));
+        $dishes = Taomlar::query()->with('image')->get();
+        return view('admin.meals.indexed', compact('dishes'));
     }
 
     /**
