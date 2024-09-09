@@ -28,15 +28,88 @@
                 <span class="close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="payment-card" data-payment-type="Payme">
-                    <img src="{{ asset('img/img_2.png') }}" alt="payme" class="payment-icon">
+                <div class="payment-options">
+                    <div class="payment-card" data-payment-type="Payme">
+                        <img src="{{ asset('img/img_2.png') }}" alt="Payme" class="payment-icon">
+                    </div>
+                    <div class="payment-card" data-payment-type="Click">
+                        <img src="{{ asset('img/img_4.png') }}" alt="Click" class="payment-icon">
+                    </div>
                 </div>
-                <div class="payment-card" data-payment-type="Click">
-                    <img src="{{ asset('img/img_1.png') }}" alt="click" class="payment-icon">
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Bekor qilish</button>
             </div>
         </div>
     </div>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .plans-container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        .plans-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #1a73e8;
+        }
+
+        .plan-price {
+            margin: 15px 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .btn-select-plan {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-select-plan:hover {
+            background-color: #0d5bb8;
+        }
+    </style>
 @endsection
 
 @section('scripts')
@@ -48,11 +121,12 @@
             var paymentCards = document.querySelectorAll('.payment-card');
             var selectedPlanId = null;
             var selectedPaymentType = null;
+            var cancelBtn = document.querySelector('.btn-cancel');
 
             btns.forEach(function(btn) {
                 btn.addEventListener('click', function() {
                     selectedPlanId = btn.getAttribute('data-plan-id');
-                    modal.style.display = 'block';
+                    modal.style.display = 'flex';
                 });
             });
 
@@ -68,6 +142,10 @@
                     }
                     modal.style.display = 'none';
                 });
+            });
+
+            cancelBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
             });
 
             window.onclick = function(event) {
