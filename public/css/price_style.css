@@ -208,7 +208,6 @@
     }
 }
 
-
 /* Modal Styles */
 .modal {
     display: none;
@@ -218,81 +217,94 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 30px;
-    border-radius: 12px;
+    background-color: ghostwhite;
+    border-radius: 16px;
+    padding: 20px;
     width: 80%;
-    max-width: 400px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    max-width: 400px; /* Reduced the width */
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .modal-header {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #1e7e34;
-    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
 .modal-header h2 {
+    font-size: 1.4rem; /* Smaller title */
+    color: black; /* Brighter color */
     margin: 0;
-    font-size: 1.6rem;
-    color: dimgray;
-    font-weight: bold;
-}
-
-.close {
-    color: #333;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
 }
 
 .modal-body {
+    margin-bottom: 20px;
+}
+
+.payment-options {
     display: flex;
     justify-content: space-between;
-    /*margin: 22px;*/
-    padding: 20px;
-    gap: 80px;
-    width: 100%;
+    gap: 15px;
 }
 
 .payment-card {
-    background-color: #f0f0f0;
+    flex: 1;
+    text-align: center;
+    border: 2px solid #ddd;
     border-radius: 12px;
-    width: 45%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 12px;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+}
+
+.payment-card img {
+    max-width: 100px;
+}
+
+.payment-card p {
+    margin: 0;
+    font-weight: bold;
+    color: goldenrod;
 }
 
 .payment-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-color: #1a73e8;
+    background-color: #f1f7ff;
 }
 
-.payment-icon {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
+.modal-footer {
+    text-align: right;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #d32f2f;
+}
+
+.close {
+    font-size: 1.6rem; /* Slightly smaller */
+    cursor: pointer;
+    color: #333;
 }
 
 

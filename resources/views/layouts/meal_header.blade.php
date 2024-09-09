@@ -23,7 +23,9 @@
     <nav id="nav-menu">
         <ul>
             <li><a href="/">Bosh Sahifa</a></li>
-            <li><a href="{{route('admin.prices.index')}}">To'lovlar</a></li>
+            @can('user_access')
+                <li><a href="{{route('admin.prices.index')}}">To'lovlar</a></li>
+            @endcan
             @if(in_array('1' , auth()->user()->roles->pluck('id')->toArray()))
                 <li ><a style="background-color: darkgoldenrod;color: white;padding: 8px;border-radius: 50%" href="{{route('admin.layaouts.header')}}">admin</a></li>
             @endif

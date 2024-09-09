@@ -36,4 +36,17 @@ return [
         'redirect' => env('GOOGLE_CALLBACK_URL'),
     ],
 
+    'click' => [
+        'merchant_id' => env('CLICK_MERCHANT_ID'),
+        'service_id' => env('CLICK_SERVICE_ID'),
+        'secret_key' => env('CLICK_SECRET_KEY'),
+        'merchant_user_id' => env('CLICK_MERCHANT_USER_ID'),
+        'return_url' => env('CLICK_RETURN_URL'),
+        'cancel_url' => env('CLICK_CANCEL_URL'),
+    ],
+
+    'payme' => [
+        'merchant_id' => env('PAYME_MERCHANT_ID'),
+    ],
+
 ];
