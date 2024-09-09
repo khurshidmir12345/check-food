@@ -56,5 +56,11 @@ Route::get('/home', function () {
     return view('layouts.header');
 })->middleware('auth')->name('admin.layaouts.header');
 
+Route::any('/handle/{paysys}', function ($paysys) {
+    $result = (new Goodoneuz\PayUz\PayUz)->driver($paysys)->handle();
+
+    return response($result);
+});
+
 
 require __DIR__ . '/auth.php';
