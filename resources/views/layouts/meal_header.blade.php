@@ -7,7 +7,9 @@
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="{{ asset('css/veggie_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/price_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <!-- Font Awesome for Icons -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
@@ -48,6 +50,7 @@
 
 @yield('scripts')
 
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const menuToggle = document.getElementById('menu-toggle');
@@ -80,5 +83,9 @@
             .catch(error => console.error('Error submitting vegetables:', error));
     }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
