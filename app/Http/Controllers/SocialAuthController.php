@@ -42,7 +42,6 @@ class SocialAuthController extends Controller
                     'google_token' => $googleUser->token,
                     'google_refresh_token' => $googleUser->refreshToken ?? null,
                 ]);
-
                 $user->roles()->sync([2]);
             }
 
