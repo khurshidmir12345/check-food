@@ -34,8 +34,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
 });
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/api/auth/google/redirect', [SocialAuthController::class, 'redirect'])->name('google.redirect');
-    Route::get('/api/auth/google/callback', [SocialAuthController::class, 'callback']);
+    Route::get('/google/redirect', [SocialAuthController::class, 'redirect'])->name('google.redirect');
+    Route::get('/google/call-back', [SocialAuthController::class, 'callback']);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
