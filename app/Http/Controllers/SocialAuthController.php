@@ -47,7 +47,7 @@ class SocialAuthController extends Controller
             }
 
             Auth::login($user);
-            return view('admin.meals.index');
+            return redirect()->route('admin.taomlar.index');
 
         } catch (Exception $e) {
             \Log::error('Google login error: ' . $e->getMessage());
