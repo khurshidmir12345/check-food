@@ -1,47 +1,74 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.guest')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('coontent')
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth px-0">
+                <div class="row w-100 mx-0">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                            <div class="brand-logo">
+                                <h3 class="font-weight-bold">Taom-Tanlang </h3>
+                            </div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <!-- Laravel login form -->
+                            <form method="POST" action="{{ route('login') }}" class="pt-3">
+                                @csrf
+                                <!-- Username or Email Field -->
+                                <div class="form-group">
+                                    <input type="email"
+                                           class="form-control form-control-lg @error('email') is-invalid @enderror"
+                                           name="email"
+                                           value="{{ old('email') }}"
+                                           placeholder="Email"
+                                           required
+                                           autofocus>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                <!-- Password Field -->
+                                <div class="form-group">
+                                    <input type="password"
+                                           class="form-control form-control-lg @error('password') is-invalid @enderror"
+                                           name="password"
+                                           placeholder="Password"
+                                           required>
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                <!-- Sign In Button -->
+                                <div class="mt-3">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                                        Kirish
+                                    </button>
+                                </div>
+
+                                <!-- Google login -->
+                                <div class="mb-2 mt-3">
+                                    <a href="{{ route('google.redirect') }}" class="btn btn-block btn-google auth-form-btn">
+                                        <i class="ti-google mr-2"></i> Google orqali Login
+                                    </a>
+                                </div>
+
+                                <!-- Register link -->
+                                <div class="text-center mt-4 font-weight-light">
+                                    Ro'yxatdan o'tish uchun <a href="{{ route('register') }}" class="text-primary">- Register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Google Login Button -->
-        <div class="mt-5">
-            <a href="{{ route('google.redirect') }}" class="flex items-center justify-center px-4 py-2 bg-white border border-green-500 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-100">
-                <img src="{{ asset('logos/google.png') }}" class="w-20 h-6 mr-2" alt="Google Logo">
-                <span>{{ __('Continue with Google') }}</span>
-            </a>
-        </div>
-
-
-        <div class="float-end mt-4">
-            <button type="submit" class="flex items-end justify-center px-4 py-2 bg-white border border-blue-500 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-blue-300">
-                <span class="w-20 h-15 mr-2">{{ __('Log in') }}</span>
-            </button>
-        </div>
-        <div class="mt-4 text-center">
-            <a href="{{ route('register') }}" class="inline-block border-l-8 text-sm text-gray-600 hover:text-gray-900">
-                {{ __('Don’t have an account? Register') }}
-            </a>
-        </div>
-    </form>
-</x-guest-layout>
+        <!-- page-body-wrapper ends -->
+    </div>
+@endsection

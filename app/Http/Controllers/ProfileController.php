@@ -53,7 +53,7 @@ class ProfileController extends Controller
 
         $user->forceDelete();
 
-        return Redirect::route('admin.qrcodes.index');
+        return Redirect::route('login');
 
     }
 }

@@ -52,6 +52,10 @@ Route::get('/', function () {
     return view('admin.meals.index');
 })->middleware('auth');
 
+Route::get('/login', function () {
+    return view('auth.login');
+})->middleware('auth');
+
 Route::get('/home', function () {
     return view('layouts.header');
 })->middleware('auth')->name('admin.layaouts.header');
