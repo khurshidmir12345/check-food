@@ -5,7 +5,7 @@
     <!-- Random Dish Container -->
     <div class="random-dish-container">
         @if(!isset($dish))
-            <h1><i class="fa-solid fa-utensils"></i> O‘zingizni Asl Oshpazdek His Qiling 👩🏻‍🍳!</h1>
+            <h1><i class="fa-solid fa-utensils"></i> Nima taom yeyishni biz o'ylaymiz 👩🏻‍🍳!</h1>
             <div id="dish-name" style="font-size: larger">Har Kuni Nima Pishirishni O‘ylash Sizni Charchatdimi? Muammoni
                 Bizga Topshiring!
             </div>
