@@ -29,7 +29,7 @@
             <!-- Random Dish Button -->
             <form action="{{ route('admin.random-dish') }}" method="POST" id="randomDishForm">
                 @csrf
-                <button type="submit" class="btn" id="randomDishButton">
+                <button type="submit" class="btn btn-outline-success" id="randomDishButton">
                     <i class="fa-solid fa-shuffle"></i> Bugun nima taom yeymiz!
                 </button>
                 <div id="countdown"
