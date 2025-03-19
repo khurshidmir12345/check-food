@@ -29,6 +29,8 @@ class User extends Authenticatable
         'google_id',
         'google_token',
         'google_refresh_token',
+        'chat_id',
+        'chat_username'
     ];
 
     /**

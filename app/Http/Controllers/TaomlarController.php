@@ -83,8 +83,7 @@ class   TaomlarController extends Controller
         try {
             $imageName = null;
             if ($request->hasFile('image')) {
-                $imageName = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/meal_images', $imageName);
+                $imageName = $request->file('image')->store('public/meal_images');
             }
 
             $taom = Taomlar::create([
@@ -96,7 +95,7 @@ class   TaomlarController extends Controller
             if ($imageName) {
                 Image::create([
                     'name' => pathinfo($imageName, PATHINFO_FILENAME),
-                    'image_url' => 'meal_images/' . $imageName,
+                    'image_url' => $imageName,
                     'taomlar_id' => $taom->id,
                 ]);
             }

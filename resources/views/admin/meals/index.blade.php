@@ -5,15 +5,15 @@
     <!-- Random Dish Container -->
     <div class="random-dish-container">
         @if(!isset($dish))
-            <h1><i class="fa-solid fa-utensils"></i> O‘zingizni Asl Oshpazdek His Qiling 👩🏻‍🍳!</h1>
+            <h1><i class="fa-solid fa-utensils"></i> Nima taom yeyishni biz o'ylaymiz 👩🏻‍🍳!</h1>
             <div id="dish-name" style="font-size: larger">Har Kuni Nima Pishirishni O‘ylash Sizni Charchatdimi? Muammoni
                 Bizga Topshiring!
             </div>
         @endif
 
         <div class="random-dish">
-            <div class="dish-name">{{ 'Bugun nima pishiraman 🤔 ?' }}</div>
             @if(isset($dish))
+            <div class="dish-name">{{ 'Bugun nima pishiraman 🤔 ?' }}</div>
                 <div class="dish-name" style="color: orange">{{ $dish->name_uz }}</div>
                 @if(isset($image))
                     <div class="dish-image">
@@ -29,8 +29,8 @@
             <!-- Random Dish Button -->
             <form action="{{ route('admin.random-dish') }}" method="POST" id="randomDishForm">
                 @csrf
-                <button type="submit" class="btn btn-outline-success" id="randomDishButton">
-                    <i class="fa-solid fa-shuffle"></i> Bugun nima taom yeymiz!
+                <button type="submit" class="btn btn-outline-warning mt-3" id="randomDishButton">
+                     Bugun nima taom yeymiz!
                 </button>
                 <div id="countdown"
                      style="margin-top: 15px; font-size: 1rem; color: goldenrod; display: none; font-weight: bolder">
