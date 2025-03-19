@@ -12,8 +12,8 @@
         @endif
 
         <div class="random-dish">
-            <div class="dish-name">{{ 'Bugun nima pishiraman 🤔 ?' }}</div>
             @if(isset($dish))
+            <div class="dish-name">{{ 'Bugun nima pishiraman 🤔 ?' }}</div>
                 <div class="dish-name" style="color: orange">{{ $dish->name_uz }}</div>
                 @if(isset($image))
                     <div class="dish-image">
@@ -29,8 +29,8 @@
             <!-- Random Dish Button -->
             <form action="{{ route('admin.random-dish') }}" method="POST" id="randomDishForm">
                 @csrf
-                <button type="submit" class="btn btn-outline-success" id="randomDishButton">
-                    <i class="fa-solid fa-shuffle"></i> Bugun nima taom yeymiz!
+                <button type="submit" class="btn btn-outline-warning mt-3" id="randomDishButton">
+                     Bugun nima taom yeymiz!
                 </button>
                 <div id="countdown"
                      style="margin-top: 15px; font-size: 1rem; color: goldenrod; display: none; font-weight: bolder">
